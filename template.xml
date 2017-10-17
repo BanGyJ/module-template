@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<template
+  format="5"
+  revision="2"
+  name="Module"
+  description="创建一个模块化的目录"
+>
+  <!-- 父级菜单 -->
+  <category value="Module"/>
+
+  <parameter
+    id="prefixName"
+    name="prefix"
+    type="string"
+    constraints="class|nonempty"
+    default="dome"
+    help="前缀名称."/>
+
+  <parameter
+    id="moduleName"
+    name="模块名称"
+    type="string"
+    constraints="class|unique|nonempty"
+    default="dome"
+    help="模块名称."/>
+
+  <parameter
+    id="packageName"
+    name="Package name"
+    type="string"
+    constraints="package"
+    help="基本包名"
+    default="com.mycompany.myapp"/>
+  <parameter
+    id="isMVP"
+    name="MVP"
+    type="boolean"
+    default="true"
+    help="是否生成MVP目录结构"/>
+
+  <parameter
+    id="isKotlin"
+    name="Kotlin"
+    type="boolean"
+    default="true"
+    help="添加Kotlin依赖"/>
+
+  <parameter
+    id="App"
+    name="App"
+    type="boolean"
+    default="false"
+    help="模块APP"/>
+
+  <parameter
+    id="Module"
+    name="Module"
+    type="boolean"
+    default="false"
+    help="模块Module"/>
+  <parameter
+    id="Code"
+    name="Code"
+    type="boolean"
+    default="false"
+    help="模块Code"/>
+  <parameter
+    id="Debug"
+    name="Debug"
+    type="boolean"
+    default="false"
+    help="模块Debug"/>
+  <parameter
+    id="Res"
+    name="Res"
+    type="boolean"
+    default="false"
+    help="模块Res"/>
+  <parameter
+    id="Test"
+    name="Test"
+    type="boolean"
+    default="false"
+    help="模块Test"/>
+
+  <parameter
+    id="compileSdk"
+    name="compileSdk API level"
+    type="string"
+    constraints="apilevel"
+    default="26"
+    help="编译Sdl版本"/>
+
+
+  <parameter
+    id="buildTools"
+    name="buildTools API level"
+    type="string"
+    constraints="apilevel"
+    default="26.0.1"
+    help="编译API版本"
+  />
+
+  <parameter
+    id="minApi"
+    name="Minimum API level"
+    type="string"
+    constraints="apilevel"
+    default="19"
+    help="最小API版本"
+  />
+
+  <parameter
+    id="targetApi"
+    name="Target API level"
+    type="string"
+    constraints="apilevel"
+    default="21"
+    help="目标API版本"
+  />
+
+  <thumbs>
+    <!-- 模板图示 -->
+    <thumb>template_blank_activity.png</thumb>
+  </thumbs>
+  <!--常量-->
+  <globals file="globals.xml.ftl"/>
+  <execute file="recipe.xml.ftl"/>
+
+</template>
